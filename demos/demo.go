@@ -2,9 +2,10 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
 
-	"github.com/falconray0704/rtsp2rtmp"
+	"github.com/wanghonggao007/rtsp2rtmp"
 	//	"github.com/nareix/mp4"
 	//	mpegts "github.com/nareix/ts"
 )
@@ -34,7 +35,7 @@ func handleNALU(nalType byte, payload []byte, ts int64, outFlvChan chan rtsp2rtm
 	flvChk.Timestamp = uint32(ts)
 	flvChk.NaluData = []byte{}
 	flvChk.NaluData = payload
-
+	//fmt.Println("===================", nalType, flvChk.TagType, flvChk.DataSize)
 	if nalType == 7 {
 		/*
 			if len(sps) == 0 {
@@ -42,6 +43,10 @@ func handleNALU(nalType byte, payload []byte, ts int64, outFlvChan chan rtsp2rtm
 			}
 		*/
 		log.Println("nalType:%x", nalType)
+		/////////////w+
+		//flvChk.TagType = rtsp2rtmp.VIDEO_TAG
+		//outFlvChan <- flvChk
+		//////////////
 	} else if nalType == 8 {
 		/*
 			if len(pps) == 0 {
@@ -49,6 +54,10 @@ func handleNALU(nalType byte, payload []byte, ts int64, outFlvChan chan rtsp2rtm
 			}
 		*/
 		log.Println("nalType:%x", nalType)
+		/////////////w+
+		//flvChk.TagType = rtsp2rtmp.VIDEO_TAG
+		//outFlvChan <- flvChk
+		//////////////
 	} else if nalType == 5 {
 		// keyframe
 		syncCount++
@@ -93,17 +102,21 @@ func main() {
 
 	//flag.BoolVar(&saveGob, "s", false, "save to gob file")
 	//flag.IntVar(&maxgop, "g", 10, "max gop recording")
-	flag.StringVar(&rtspUrl, "rtspUrl", "rtsp://admin:123456@10.1.51.13/H264?ch=1&subtype=0", "")
-	flag.StringVar(&rtmpUrl, "rtmpUrl", "rtmp://10.1.51.20:1935/myapp/", "")
-	flag.StringVar(&streamName, "streamName", "cv", "")
+	//flag.StringVar(&rtspUrl, "rtspUrl", "rtsp://admin:root1234@192.168.8.64:554/cam/realmonitor?channel=1&subtype=0&unicast=true&proto=Onvif", "")
+	flag.StringVar(&rtspUrl, "rtspUrl", "rtsp://admin:root1234@192.168.8.64:554/h264/ch1/sub/av_stream", "")
+	flag.StringVar(&rtmpUrl, "rtmpUrl", "rtmp://localhost:1935/live/movie", "")
+	flag.StringVar(&streamName, "av_stream", "live", "")
 	flag.Parse()
-
+	fmt.Println("======================")
+	fmt.Println(flag.Args())
+	fmt.Println("======================")
 	RtspReader := rtsp2rtmp.RtspClientNew()
 
 	inFlvChan = make(chan rtsp2rtmp.FlvChunk, 30*10)
 	rtsp2rtmp.InitRtmpHandler(&rtmpHandler, streamName, rtmpUrl, inFlvChan)
+	fmt.Println("=========StartPublish1", rtmpUrl)
 	rtsp2rtmp.StartPublish(&rtmpHandler)
-
+	fmt.Println("=========StartPublish2", rtmpUrl)
 	quit := false
 
 	//	sps := []byte{}

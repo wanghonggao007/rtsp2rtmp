@@ -7,7 +7,7 @@ import (
 	"time"
 
 	//	"github.com/zhangpeihao/goflv"
-	rtmp "github.com/falconray0704/gortmp"
+	rtmp "github.com/wanghonggao007/gortmp"
 	"github.com/zhangpeihao/log"
 )
 
@@ -97,6 +97,7 @@ func (handler *RtmpOutboundConnHandler) OnPublishStart(stream rtmp.OutboundStrea
 }
 
 func publish(stream rtmp.OutboundStream, ctx *RtmpPublisherContext) {
+	fmt.Println("==================", "publish")
 	fmt.Println("1")
 	var err error
 	fmt.Println("2")
@@ -106,6 +107,7 @@ func publish(stream rtmp.OutboundStream, ctx *RtmpPublisherContext) {
 	preTs := uint32(0)
 	fmt.Println("3")
 	for status == rtmp.OUTBOUND_CONN_STATUS_CREATE_STREAM_OK {
+		fmt.Println("==================", "publish111")
 		/*
 			if flvFile.IsFinished() {
 				fmt.Println("@@@@@@@@@@@@@@File finished")
@@ -185,6 +187,8 @@ func runPublish(handler *RtmpOutboundConnHandler) {
 			if err != nil {
 				fmt.Printf("Publish error: %s", err.Error())
 				os.Exit(-1)
+			} else {
+				fmt.Printf("Publish success")
 			}
 		case stop := <-handler.RtmpPublisherCtx.stopStreamChan:
 			if stop == uint32(0x01) {

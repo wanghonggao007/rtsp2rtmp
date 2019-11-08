@@ -52,7 +52,7 @@ func RtspClientNew() *RtspClient {
 func (this *RtspClient) Client(rtsp_url string) (bool, string) {
 	//проверить и отпарсить url
 	if !this.ParseUrl(rtsp_url) {
-		return false, "Не верный url"
+		return false, "url不正确"
 	}
 	//установить подключение к камере
 	if !this.Connect() {
@@ -75,7 +75,7 @@ func (this *RtspClient) Client(rtsp_url string) (bool, string) {
 			return false, "Требуеться авторизация Basic"
 		}
 	} else if !strings.Contains(message, "200") {
-		return false, "Ошибка OPTIONS not status code 200 OK " + message
+		return false, "OPTIONS not status code 200 OK " + message
 	}
 
 	////////////PHASE 2 DESCRIBE
@@ -413,6 +413,7 @@ func (this *RtspClient) ParseUrl(rtsp_url string) bool {
 	}
 	this.login = u.User.Username()
 	this.password, this.auth = u.User.Password()
+	fmt.Println("==========ParseUrl:", this.uri)
 	if u.RawQuery != "" {
 		this.uri = "rtsp://" + this.host + ":" + this.port + u.Path + "?" + string(u.RawQuery)
 	} else {
