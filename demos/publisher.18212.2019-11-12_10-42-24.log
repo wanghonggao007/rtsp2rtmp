@@ -1,0 +1,154 @@
+2019/11/12 10:42:24 ######## Profiles #######
+heap profile: 3: 2401472 [3: 2401472] @ heap/1048576
+1: 2400256 [1: 2400256] @ 0x5fdefc 0x5fdebd 0x430aec 0x458421
+#	0x5fdefb	github.com/wanghonggao007/rtsp2rtmp.RtspClientNew+0x3cb	G:/work/GOPATH/src/github.com/wanghonggao007/rtsp2rtmp/rtsp2rtmp.go:46
+#	0x5fdebc	main.main+0x38c						G:/work/GOPATH/src/github.com/wanghonggao007/rtsp2rtmp/demos/demo.go:113
+#	0x430aeb	runtime.main+0x20b					c:/go/src/runtime/proc.go:200
+
+1: 1152 [1: 1152] @ 0x4e658b 0x4e6569 0x4e7449 0x430aa8 0x458421
+#	0x4e658a	compress/flate.newHuffmanEncoder+0x4a			c:/go/src/compress/flate/huffman_code.go:60
+#	0x4e6568	compress/flate.generateFixedLiteralEncoding+0x28	c:/go/src/compress/flate/huffman_code.go:65
+#	0x4e7448	compress/flate.init.ializers+0x28			c:/go/src/compress/flate/huffman_code.go:106
+#	0x430aa7	runtime.main+0x1c7					c:/go/src/runtime/proc.go:188
+
+1: 64 [1: 64] @ 0x48f611 0x490e30 0x49ca71 0x49ca59 0x4a9cfb 0x4aa1e5 0x4aa637 0x4aaac3 0x4ab0a5 0x46d10a 0x4a73ff 0x4a7316 0x4a81d6 0x4f5378 0x4f5360 0x5f7494 0x5f7439 0x5fdfc4 0x430aec 0x458421
+#	0x48f610	unicode/utf16.Encode+0x70					c:/go/src/unicode/utf16/utf16.go:64
+#	0x490e2f	syscall.UTF16FromString+0x10f					c:/go/src/syscall/syscall_windows.go:44
+#	0x49ca70	syscall.UTF16PtrFromString+0x40					c:/go/src/syscall/syscall_windows.go:71
+#	0x49ca58	internal/syscall/windows/registry.OpenKey+0x28			c:/go/src/internal/syscall/windows/registry/key.go:80
+#	0x4a9cfa	time.matchZoneKey+0x6a						c:/go/src/time/zoneinfo_windows.go:29
+#	0x4aa1e4	time.toEnglishName+0x174					c:/go/src/time/zoneinfo_windows.go:75
+#	0x4aa636	time.abbrev+0x106						c:/go/src/time/zoneinfo_windows.go:101
+#	0x4aaac2	time.initLocalFromTZI+0xd2					c:/go/src/time/zoneinfo_windows.go:153
+#	0x4ab0a4	time.initLocal+0xc4						c:/go/src/time/zoneinfo_windows.go:241
+#	0x46d109	sync.(*Once).Do+0xb9						c:/go/src/sync/once.go:44
+#	0x4a73fe	time.(*Location).get+0x12e					c:/go/src/time/zoneinfo.go:79
+#	0x4a7315	time.Time.abs+0x45						c:/go/src/time/time.go:459
+#	0x4a81d5	time.Time.date+0x45						c:/go/src/time/time.go:968
+#	0x4f5377	time.Time.Year+0x137						c:/go/src/time/time.go:505
+#	0x4f535f	github.com/zhangpeihao/log.NewLoggerWithHeader+0x11f		G:/work/GOPATH/src/github.com/zhangpeihao/log/log.go:73
+#	0x5f7493	github.com/zhangpeihao/log.NewLogger+0xe3			G:/work/GOPATH/src/github.com/zhangpeihao/log/log.go:55
+#	0x5f7438	github.com/wanghonggao007/rtsp2rtmp.InitRtmpHandler+0x88	G:/work/GOPATH/src/github.com/wanghonggao007/rtsp2rtmp/rtmp_publisher.go:172
+#	0x5fdfc3	main.main+0x493							G:/work/GOPATH/src/github.com/wanghonggao007/rtsp2rtmp/demos/demo.go:116
+#	0x430aeb	runtime.main+0x20b						c:/go/src/runtime/proc.go:200
+
+
+# runtime.MemStats
+# Alloc = 2574840
+# TotalAlloc = 2574840
+# Sys = 6424952
+# Lookups = 0
+# Mallocs = 1390
+# Frees = 48
+# HeapAlloc = 2574840
+# HeapSys = 4096000
+# HeapIdle = 958464
+# HeapInuse = 3137536
+# HeapReleased = 0
+# HeapObjects = 1342
+# Stack = 98304 / 98304
+# MSpan = 11376 / 16384
+# MCache = 6816 / 16384
+# BuckHashSys = 1443044
+# GCSys = 211072
+# OtherSys = 543764
+# NextGC = 4473924
+# LastGC = 0
+# PauseNs = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+# PauseEnd = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+# NumGC = 0
+# NumForcedGC = 0
+# GCCPUFraction = 0
+# DebugGC = false
+--- contention:
+cycles/second=2709311219
+goroutine profile: total 2
+1 @ 0x430ee4 0x43ec71 0x4f715a 0x458421
+#	0x4f7159	github.com/zhangpeihao/log.(*Logger).counterDump+0x449	G:/work/GOPATH/src/github.com/zhangpeihao/log/log.go:360
+
+1 @ 0x4ee5f7 0x4ee407 0x4eaf87 0x4f67eb 0x4f669a 0x4f61d5 0x5f7494 0x5f7439 0x5fdfc4 0x430aec 0x458421
+#	0x4ee5f6	runtime/pprof.writeRuntimeProfile+0x96				c:/go/src/runtime/pprof/pprof.go:708
+#	0x4ee406	runtime/pprof.writeGoroutine+0xa6				c:/go/src/runtime/pprof/pprof.go:670
+#	0x4eaf86	runtime/pprof.(*Profile).WriteTo+0x396				c:/go/src/runtime/pprof/pprof.go:329
+#	0x4f67ea	github.com/zhangpeihao/log.(*Logger).DumpProf+0xda		G:/work/GOPATH/src/github.com/zhangpeihao/log/log.go:146
+#	0x4f6699	github.com/zhangpeihao/log.(*Logger).DumpHeader+0x49		G:/work/GOPATH/src/github.com/zhangpeihao/log/log.go:137
+#	0x4f61d4	github.com/zhangpeihao/log.NewLoggerWithHeader+0xf94		G:/work/GOPATH/src/github.com/zhangpeihao/log/log.go:116
+#	0x5f7493	github.com/zhangpeihao/log.NewLogger+0xe3			G:/work/GOPATH/src/github.com/zhangpeihao/log/log.go:55
+#	0x5f7438	github.com/wanghonggao007/rtsp2rtmp.InitRtmpHandler+0x88	G:/work/GOPATH/src/github.com/wanghonggao007/rtsp2rtmp/rtmp_publisher.go:172
+#	0x5fdfc3	main.main+0x493							G:/work/GOPATH/src/github.com/wanghonggao007/rtsp2rtmp/demos/demo.go:116
+#	0x430aeb	runtime.main+0x20b						c:/go/src/runtime/proc.go:200
+
+heap profile: 3: 2401472 [3: 2401472] @ heap/1048576
+1: 2400256 [1: 2400256] @ 0x5fdefc 0x5fdebd 0x430aec 0x458421
+#	0x5fdefb	github.com/wanghonggao007/rtsp2rtmp.RtspClientNew+0x3cb	G:/work/GOPATH/src/github.com/wanghonggao007/rtsp2rtmp/rtsp2rtmp.go:46
+#	0x5fdebc	main.main+0x38c						G:/work/GOPATH/src/github.com/wanghonggao007/rtsp2rtmp/demos/demo.go:113
+#	0x430aeb	runtime.main+0x20b					c:/go/src/runtime/proc.go:200
+
+1: 1152 [1: 1152] @ 0x4e658b 0x4e6569 0x4e7449 0x430aa8 0x458421
+#	0x4e658a	compress/flate.newHuffmanEncoder+0x4a			c:/go/src/compress/flate/huffman_code.go:60
+#	0x4e6568	compress/flate.generateFixedLiteralEncoding+0x28	c:/go/src/compress/flate/huffman_code.go:65
+#	0x4e7448	compress/flate.init.ializers+0x28			c:/go/src/compress/flate/huffman_code.go:106
+#	0x430aa7	runtime.main+0x1c7					c:/go/src/runtime/proc.go:188
+
+1: 64 [1: 64] @ 0x48f611 0x490e30 0x49ca71 0x49ca59 0x4a9cfb 0x4aa1e5 0x4aa637 0x4aaac3 0x4ab0a5 0x46d10a 0x4a73ff 0x4a7316 0x4a81d6 0x4f5378 0x4f5360 0x5f7494 0x5f7439 0x5fdfc4 0x430aec 0x458421
+#	0x48f610	unicode/utf16.Encode+0x70					c:/go/src/unicode/utf16/utf16.go:64
+#	0x490e2f	syscall.UTF16FromString+0x10f					c:/go/src/syscall/syscall_windows.go:44
+#	0x49ca70	syscall.UTF16PtrFromString+0x40					c:/go/src/syscall/syscall_windows.go:71
+#	0x49ca58	internal/syscall/windows/registry.OpenKey+0x28			c:/go/src/internal/syscall/windows/registry/key.go:80
+#	0x4a9cfa	time.matchZoneKey+0x6a						c:/go/src/time/zoneinfo_windows.go:29
+#	0x4aa1e4	time.toEnglishName+0x174					c:/go/src/time/zoneinfo_windows.go:75
+#	0x4aa636	time.abbrev+0x106						c:/go/src/time/zoneinfo_windows.go:101
+#	0x4aaac2	time.initLocalFromTZI+0xd2					c:/go/src/time/zoneinfo_windows.go:153
+#	0x4ab0a4	time.initLocal+0xc4						c:/go/src/time/zoneinfo_windows.go:241
+#	0x46d109	sync.(*Once).Do+0xb9						c:/go/src/sync/once.go:44
+#	0x4a73fe	time.(*Location).get+0x12e					c:/go/src/time/zoneinfo.go:79
+#	0x4a7315	time.Time.abs+0x45						c:/go/src/time/time.go:459
+#	0x4a81d5	time.Time.date+0x45						c:/go/src/time/time.go:968
+#	0x4f5377	time.Time.Year+0x137						c:/go/src/time/time.go:505
+#	0x4f535f	github.com/zhangpeihao/log.NewLoggerWithHeader+0x11f		G:/work/GOPATH/src/github.com/zhangpeihao/log/log.go:73
+#	0x5f7493	github.com/zhangpeihao/log.NewLogger+0xe3			G:/work/GOPATH/src/github.com/zhangpeihao/log/log.go:55
+#	0x5f7438	github.com/wanghonggao007/rtsp2rtmp.InitRtmpHandler+0x88	G:/work/GOPATH/src/github.com/wanghonggao007/rtsp2rtmp/rtmp_publisher.go:172
+#	0x5fdfc3	main.main+0x493							G:/work/GOPATH/src/github.com/wanghonggao007/rtsp2rtmp/demos/demo.go:116
+#	0x430aeb	runtime.main+0x20b						c:/go/src/runtime/proc.go:200
+
+
+# runtime.MemStats
+# Alloc = 2654360
+# TotalAlloc = 2654360
+# Sys = 6424952
+# Lookups = 0
+# Mallocs = 1778
+# Frees = 147
+# HeapAlloc = 2654360
+# HeapSys = 4096000
+# HeapIdle = 737280
+# HeapInuse = 3358720
+# HeapReleased = 0
+# HeapObjects = 1631
+# Stack = 98304 / 98304
+# MSpan = 12672 / 16384
+# MCache = 6816 / 16384
+# BuckHashSys = 1443044
+# GCSys = 211072
+# OtherSys = 543764
+# NextGC = 4473924
+# LastGC = 0
+# PauseNs = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+# PauseEnd = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+# NumGC = 0
+# NumForcedGC = 0
+# GCCPUFraction = 0
+# DebugGC = false
+--- mutex:
+cycles/second=2709311219
+sampling period=0
+threadcreate profile: total 6
+6 @
+#	0x0
+
+######## Heap #######
+ã     ˇúîMåE«ﬂûè›öûôÌgzfvjáØ~˚›vó7›PØC<@¯ÿ%ñ‡#óµßß∂ßa¶jÏÆq\Nı¢Ò`FFâb‚ÕH· èíx3FÉ<Ë…¯Åò™^ò]‘pyv´~ˇˇˇyûÈô>öA§û^Z≤ÙJCFœ†,§ÙRˇC 6êÜ_˝˛ùî-•;AõBHÑëï≥î¬ÔøyF¢¸O°ËX∑Ú∂Å“¯áSg%J√¥Bi(‡ÇB¸EÇ2pX°q—±î≈ø\8/]YXßPlX`hsU°!8†–îpI°a¸¡g
+UhLlZ`B¯ çÛ);ãºÆ)Ü†åÀäÂôØÀ¡è	ÀAWT§é_z˚9àæºôU\µFmÂÒÔﬂûì(≥*15\≥∞®ÄOﬂ<'ª‡zZ±å·1´n*‚/®nE∏6¨X÷‡5äç‡üﬁΩ$}#s‚Åµx≠U∑d‡/%À ˆ+õÎ:kΩm ¿Ø}wGN∞]!ÄxÉµﬁT¬ﬁ∫#K^≤[	,lYˇ∂d‚´›ï6Ñ≤ô`c€˙è®åoü~E⁄ p-±ïaè[ˇ57ô˙“Œ∑ñ,UÙ≤ñJg≤C√(ßÁ≈JfπûA)º”6PˇzÈÆÃØÄ£Ú+∞o¥6Ÿ™‚ã	2·–Ã∫©kü?JSEOW™Â˙0J·•À'5€@£¯ÂÎdNS9Uò¿÷§m†æı©B£∞K°Qò¬S
+a|ÌñB58¶P6„Õ÷§hüΩ∑›E4sÃ‘?I_~—REœå÷X=+˚Áf~ªsÛ ◊üº]≠gêˆ®F˛E≤q◊Û)…6çI—k∑π?œ«®/bíıyè	íOne1dΩòŒﬂì‰ìc¬*=˙ºI›ûXÿ∫ÕŸÀ‰ÅX˛7‡n˘Ó*æ¨
+8©≈ã±Ôµ€Œs˚∂n€ÒŒ„"
+Y@∆÷e…ΩøÛ˝ê5y?ñˆ˙2KÏáE¥"a2dÇFÃªotóçnDÉ0—¢3€•Ï ]$d–ÏoMÓq∫([óDÿ°N«~Î(gT∆ÿÉ	›ú—ê-ïõí8ÇÔeA;å[áº%yuÁ5}ñT’!d°8»}Ø-ö;∫üå¨æ&Fº»|gbjñ˘t“Ÿ√…Ë†πD.g>ïsVîqbJ¶âê≥I'†Ç‘j…Ôè*Ey„Ã…ıºFº2XU§,ôH…öû†+œOQ/"NäVØ·¯º„ûhy,Ë“∞Âq∑ÕÁÌ‰A@£'C—ö°^ìF‰ëÈnüG«›ÈŸ√ªÊf‘∑Ê¡*&‡d¸¡íAÚˇ™æ«ÇgA‡Ò-[∂ªëàª$ùÆ≥üÖ‚àËtg<÷l”àÃLˇÂ@ qeÿ|∑◊êœóFr»\«ô#Ÿ3˝p°M⁄·±™2∞ıò|IÊòˇg∂|Ôv#ÓK·÷≤¯ww∑C ƒ!⁄'ªr¬¡pb˘º”çhªmOPá—˛Loa°„±‰’ëâ¡–´µn+ŒÀWàÃ⁄ºö;e4Ú›>GõCA#Ø≠RÂ{cÌüƒ!ÖzÌç‚?  ˇˇåµz÷  ######## End #######
